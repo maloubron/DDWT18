@@ -33,7 +33,38 @@
                     <h1><?= $page_title ?></h1>
                     <h5><?= $page_subtitle ?></h5>
                     <p><?= $page_content ?></p>
-                    <!-- Put your form here -->
+                    <form action="/DDWT18/week1/add/" method="POST">
+                        <div class="form-group row">
+                            <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="inputName" value="<?php if (isset($get_series_info)){echo $get_series_info['Name'];} ?>" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputName" class="col-sm-2 col-form-label">Creator</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" name="inputCreator" value="<?php if (isset($get_series_info)){echo $get_series_info['Creator'];} ?>" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputName" class="col-sm-2 col-form-label">Seasons</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" name="inputSeason" value="<?php if (isset($get_series_info)){echo $get_series_info['Season'];} ?>" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputName" class="col-sm-2 col-form-label">Abstract</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" name="inputAbstract" value="<?php if (isset($get_series_info)){echo $get_series_info['Abstract'];} ?>" required> </textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row"> <div class="col-sm-10">
+                                <input type="hidden" id="serie_id" name="serie_id" value="<?= $serieid
+                                ?>">
+                                <button type="submit" class="btn btn-primary"><?= $submit_btn ?></button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
 
                 <!-- Right column -->
